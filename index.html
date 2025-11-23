@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Fuerzas Comunes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Fuerzas Comunes</h1>
+
+<section id="teoria">
+    <h2>Teoría de Fuerzas en Física</h2>
+
+    <div class="bloque-teoria">
+        <h3>1. Fuerza Normal (N)</h3>
+        <p>Es la fuerza que ejerce una superficie sobre un objeto para soportarlo. 
+        Siempre es perpendicular a la superficie.</p>
+        <p><strong>Fórmula:</strong> N = m · g</p>
+    </div>
+
+    <div class="bloque-teoria">
+        <h3>2. Peso o Fuerza Gravitatoria (Fg)</h3>
+        <p>Es la fuerza con la que la Tierra atrae un objeto hacia su centro.</p>
+        <p><strong>Fórmula:</strong> Fg = m · g</p>
+    </div>
+
+    <div class="bloque-teoria">
+        <h3>3. Fuerza de Fricción (Ff)</h3>
+        <p>Es la fuerza que se opone al movimiento entre dos superficies en contacto.</p>
+        <p><strong>Fórmula:</strong> Ff = μ · N</p>
+    </div>
+
+    <div class="bloque-teoria">
+        <h3>4. Fuerza de Tensión (T)</h3>
+        <p>Es la fuerza transmitida a través de una cuerda, cable o cadena cuando está tirante.</p>
+        <p><strong>Fórmula:</strong> T = m · a (si la cuerda acelera el objeto)</p>
+    </div>
+</section>
+
+<!-- Grafica Fuerza Normal -->
+<section id="simulador-normal">
+    <h2>Diagrama Interactivo de Fuerza Normal (N)</h2>
+
+    <div>
+        <label>Fuerza Normal (N): <span id="valorN">10</span> N</label>
+        <input type="range" id="sliderN" min="0" max="20" value="10">
+    </div>
+
+    <canvas id="canvasN" width="200" height="200"></canvas>
+</section>
+
+
+<!-- Grafica peso o gravedad -->
+
+<section id="simulador-peso">
+    <h2>Diagrama Interactivo de Peso (Fg)</h2>
+
+    <div>
+        <label>Peso (Fg): <span id="valorFg">10</span> N</label>
+        <input type="range" id="sliderFg" min="0" max="20" value="10">
+    </div>
+
+    <canvas id="canvasFg" width="200" height="200"></canvas>
+</section>
+
+
+<!-- Grafica tension -->
+
+<section id="simulador-tension">
+    <h2>Diagrama Interactivo de Tensión</h2>
+
+    <div>
+        <label>Tensión (T): <span id="valorT">8</span> N</label>
+        <input type="range" id="sliderT" min="0" max="15" value="8">
+    </div>
+
+    <canvas id="canvasT" width="200" height="300"></canvas>
+</section>
+
+
+
+<!-- Grafica Friccion -->
+<section id="simulador-friccion">
+    <h2>Diagrama Interactivo de Fricción</h2>
+
+    <div>
+        <label>Fuerza de Fricción (Ff): <span id="valorFf">5</span> N</label>
+        <input type="range" id="sliderFf" min="0" max="10" value="5">
+    </div>
+
+    <canvas id="canvasFf" width="600" height="200"></canvas>
+</section>
+
+
+    <section id="calculadora">
+        <h2>Diagrama de Fuerzas (Manual)</h2>
+        <p>Deja vacío un campo y la calculadora lo resolverá automáticamente.</p>
+
+        <label>Masa (kg):</label>
+        <input type="number" id="masa">
+
+        <label>Coeficiente de fricción (μ):</label>
+        <input type="number" id="mu">
+
+        <label>Fuerza aplicada / tensión (N):</label>
+        <input type="number" id="fap">
+
+        <label>Aceleración deseada (m/s²):</label>
+        <input type="number" id="acel">
+
+        <button id="btnCalcular">Calcular fuerzas</button>
+    </section>
+
+    <!-- Calculadora -->
+   <section id="calculadora-texto">
+    <h2>Resolver Problema </h2>
+    <div class="input-container">
+        <textarea id="enunciado" rows="5" placeholder="Escribe el enunciado del problema aquí..."></textarea>
+        <button id="btnResolver">Resolver</button>
+    </div>
+</section>
+
+
+    <div id="resultados"></div>
+
+    <section id="simulador">
+        <h2>Simulador Visual</h2>
+        <canvas id="canvas" width="600" height="350"></canvas>
+    </section>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</body>
+</html>
