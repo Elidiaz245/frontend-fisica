@@ -25,7 +25,7 @@ document.getElementById("btnResolver").addEventListener("click", async () => {
     document.getElementById("resultados").innerHTML = "Resolviendo...";
 
     try {
-        const response = await fetch("https://backend-fisica.onrender.com", {
+      const response = await fetch("https://backend-fisica.onrender.com/resolverIA", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ prompt: texto })
